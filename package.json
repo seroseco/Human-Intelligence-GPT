@@ -1,0 +1,21 @@
+{
+  "name": "chat-ui-clone-like",
+  "version": "1.0.0",
+  "description": "Modern AI chat interface built with Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "chat",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.19.0"
+  }
+}

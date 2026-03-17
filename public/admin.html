@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crystal AI Admin</title>
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body>
+    <main class="admin-root">
+      <aside class="left-pane">
+        <header class="left-head">
+          <h1>Crystal HI Admin</h1>
+          <div id="wsState" class="ws-state">연결 중</div>
+        </header>
+        <div id="sessionList" class="session-list"></div>
+      </aside>
+
+      <section class="right-pane">
+        <header class="chat-head" id="adminHeader">세션을 선택하세요</header>
+        <section id="adminMessages" class="chat-body">
+          <p class="empty-note">대화를 선택하면 메시지가 표시됩니다.</p>
+        </section>
+        <form id="adminComposer" class="chat-input">
+          <textarea id="adminInput" rows="2" placeholder="관리자 답변 입력"></textarea>
+          <button type="submit">전송</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>

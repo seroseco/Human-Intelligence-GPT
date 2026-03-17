@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>크리스탈AI</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+          <div class="sidebar-brand">
+            <img src="/assets/logo.png" alt="크리스탈AI 로고" class="logo" />
+          </div>
+          <button class="new-chat">+ 새 채팅</button>
+        </div>
+        <nav class="chat-list" id="chatList"></nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <button class="menu-btn" id="menuBtn">☰</button>
+          <div class="model-picker" id="modelPicker">
+            <button
+              type="button"
+              id="modelBtn"
+              class="model-btn"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              <span id="modelBtnText">Crystal AI</span>
+              <span class="model-caret">⌄</span>
+            </button>
+            <div id="modelMenu" class="model-menu" role="listbox" hidden>
+              <button
+                type="button"
+                class="model-option active"
+                data-model="crystal-hi"
+                data-label="Crystal AI"
+                role="option"
+                aria-selected="true"
+              >
+                <span class="model-option-main">
+                  <span class="model-icon">✦</span>
+                  <span class="model-copy">
+                    <span class="model-title">Crystal 0.1</span>
+                    <span class="model-sub">균형 잡힌 대화와 일반 작업에 적합</span>
+                  </span>
+                </span>
+                <span class="model-check">✓</span>
+              </button>
+              <button
+                type="button"
+                class="model-option is-disabled"
+                data-model="gpt-5.3"
+                data-label="ChatGPT"
+                role="option"
+                aria-selected="false"
+                aria-disabled="true"
+              >
+                <span class="model-option-main">
+                  <span class="model-icon">✧</span>
+                  <span class="model-copy">
+                    <span class="model-title">GPT-5.3</span>
+                    <span class="model-sub">복잡한 추론과 고난도 문제 해결에 강함</span>
+                  </span>
+                </span>
+                <span class="model-check">✓</span>
+              </button>
+              <button
+                type="button"
+                class="model-option is-disabled"
+                data-model="gemini-3.1"
+                data-label="Gemini"
+                role="option"
+                aria-selected="false"
+                aria-disabled="true"
+              >
+                <span class="model-option-main">
+                  <span class="model-icon">◌</span>
+                  <span class="model-copy">
+                    <span class="model-title">Gemini 3.1</span>
+                    <span class="model-sub">멀티모달 입력과 빠른 응답에 유리</span>
+                  </span>
+                </span>
+                <span class="model-check">✓</span>
+              </button>
+              <button
+                type="button"
+                class="model-option is-disabled"
+                data-model="opus-4.6"
+                data-label="Claude"
+                role="option"
+                aria-selected="false"
+                aria-disabled="true"
+              >
+                <span class="model-option-main">
+                  <span class="model-icon">◇</span>
+                  <span class="model-copy">
+                    <span class="model-title">Opus 4.6</span>
+                    <span class="model-sub">긴 맥락 이해와 정교한 글쓰기 품질이 우수</span>
+                  </span>
+                </span>
+                <span class="model-check">✓</span>
+              </button>
+            </div>
+          </div>
+          <div class="connection-status" id="connectionStatus"></div>
+        </header>
+
+        <section class="messages" id="messages">
+          <div class="welcome" id="welcomeMessage">
+            <h1>무엇을 도와드릴까요?</h1>
+          </div>
+        </section>
+
+        <footer class="composer-wrap">
+          <form class="composer" id="composer">
+            <input id="fileInput" type="file" multiple hidden />
+            <button type="button" id="attachBtn" class="attach-btn" aria-label="파일 첨부">
+              +
+            </button>
+            <textarea
+              id="prompt"
+              placeholder="무엇이든 물어보세요"
+              rows="1"
+            ></textarea>
+            <button type="submit" id="sendBtn" aria-label="전송">↑</button>
+            <div id="attachmentList" class="attachment-list" aria-live="polite"></div>
+          </form>
+          <p class="disclaimer">
+            CrystalAI는 실수를 할 수 있습니다. 중요한 정보는 재차 확인하세요.
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
